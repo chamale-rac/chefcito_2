@@ -15,10 +15,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.landing_fragment)
-        textView = findViewById(R.id.app_name)
-        textView.text= Html.fromHtml("<font color=${grey}>Chef</font>" +
-                "<font color=${pink}>cito</font>")
-
+        setContentView(R.layout.sing_up_fragment)
     }
 }

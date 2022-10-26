@@ -45,6 +45,7 @@
         android:layout_marginEnd="169dp"
         android:backgroundTint="@color/pink"
         android:fontFamily="@font/roboto_condensed_regular"
+
         android:text="@string/sing_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"
