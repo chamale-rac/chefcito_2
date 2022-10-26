@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Chefcito</string>
+    <string name="login">Login</string>
+    <string name="sing_up">Sing up</string>
+</resources>
