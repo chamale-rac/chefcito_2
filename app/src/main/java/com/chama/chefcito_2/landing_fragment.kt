@@ -50,10 +50,18 @@ class landing_fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val button = view.findViewById<Button>(R.id.login_button)
-        button?.setOnClickListener {
+
+
+        val buttonLogin = view.findViewById<Button>(R.id.login_button)
+        buttonLogin?.setOnClickListener {
             findNavController().navigate(R.id.action_landing_fragment_to_login_fragment)
         }
+
+        val buttonSignUp = view.findViewById<Button>(R.id.sign_up_button)
+        buttonSignUp?.setOnClickListener {
+            findNavController().navigate(R.id.action_landing_fragment_to_signup_fragment2)
+        }
+
 
         textView = view.findViewById<TextView>(R.id.app_name)
         textView.text= Html.fromHtml("<font color=${grey}>Chef</font>" +

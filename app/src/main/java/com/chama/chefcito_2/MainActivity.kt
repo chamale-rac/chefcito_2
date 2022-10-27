@@ -1,38 +1,34 @@
 package com.chama.chefcito_2
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Html
-import android.widget.TextView
-import androidx.core.content.ContextCompat
-import androidx.navigation.NavController
+import android.view.View
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import java.security.AccessController.getContext
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration : AppBarConfiguration
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        getSupportActionBar()?.hide()
+        supportActionBar?.hide()
 
-        val host: NavHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment ?: return
-        // Set up Action bar
-        val navController = host.navController
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        findViewById<BottomNavigationView>(R.id.bottom_nav)
+            .setupWithNavController(navController)
+        val navView: BottomNavigationView = findViewById(R.id.bottom_nav)
 
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-
-        setupBottomNavMenu(navController)
+        navController.addOnDestinationChangedListener { _, _, arguments ->
+            navView.isVisible = arguments?.getBoolean("ShowNavView", false) == true
+        }
     }
 }
 
-private fun setupBottomNavMenu(navController: NavController) {
-    // TODO STEP 9.3 - Use NavigationUI to set up Bottom Nav
-//        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
-//        bottomNav?.setupWithNavController(navController)
-    // TODO END STEP 9.3
-}

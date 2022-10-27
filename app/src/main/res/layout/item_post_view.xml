@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginStart="16dp"
+    card_view:cardCornerRadius="20dp"
+    card_view:cardElevation="8dp"
+    app:cardBackgroundColor="@color/pink"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="331dp"
+            android:layout_height="match_parent"
+            android:gravity="start"
+
+            card_view:cardCornerRadius="0dp">
+
+
+            <ImageView
+                android:id="@+id/food_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@drawable/hamburger_image" />
+
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+
+                android:gravity="center"
+                android:text="Hamburger and fries"
+                android:textColor="@color/white"
+                android:textSize="22dp"
+
+                card_view:fontFamily="@font/poppins_bold" />
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_bg"
+
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:background="@null"
+                app:tint="@color/white"
+                card_view:srcCompat="@drawable/ic_baseline_favorite_border_24" />
+
+            <TextView
+                android:id="@+id/like_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="5.5k"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
+
+            <ImageButton
+                android:id="@+id/save_button"
+                android:layout_marginTop="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                app:tint="@color/white"
+                card_view:srcCompat="@drawable/ic_baseline_bookmark_border_24" />
+
+            <TextView
+                android:id="@+id/save_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2.3k"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
+
+            <ImageButton
+                android:id="@+id/time_button"
+                android:layout_marginTop="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                app:tint="@color/white"
+                card_view:srcCompat="@drawable/ic_baseline_timer_24" />
+
+            <TextView
+                android:id="@+id/time_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:gravity="center"
+                android:text="30min"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -13,10 +13,43 @@
         <action
             android:id="@+id/action_landing_fragment_to_login_fragment"
             app:destination="@id/login_fragment" />
+
+        <action
+            android:id="@+id/action_landing_fragment_to_signup_fragment2"
+            app:destination="@id/signup_fragment2" />
+
+
+        <argument
+            android:name="ShowNavView"
+            android:defaultValue="false" />
     </fragment>
     <fragment
         android:id="@+id/login_fragment"
         android:name="com.chama.chefcito_2.login_fragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment" />
+        tools:layout="@layout/login_fragment" >
+        <argument
+            android:name="ShowNavView"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_login_fragment_to_landing_fragment"
+            app:destination="@id/landing_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup_fragment2"
+        android:name="com.chama.chefcito_2.signup_fragment"
+        android:label="signup_fragment"
+        tools:layout="@layout/signup_fragment"
+        >
+
+        <argument
+            android:name="ShowNavView"
+            android:defaultValue="false" />
+
+        <action
+            android:id="@+id/action_signup_fragment2_to_landing_fragment"
+            app:destination="@id/landing_fragment" />
+    </fragment>
+
+
 </navigation>
