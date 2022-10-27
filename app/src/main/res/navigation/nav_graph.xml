@@ -18,5 +18,14 @@
         android:id="@+id/login_fragment"
         android:name="com.chama.chefcito_2.login_fragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment" />
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_login_fragment_to_profile_fragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.chama.chefcito_2.profile_fragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
 </navigation>

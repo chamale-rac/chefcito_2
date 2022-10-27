@@ -140,7 +140,7 @@
     <Button
         android:id="@+id/button_back"
         style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-        android:layout_width="60"
+        android:layout_width="60dp"
         android:layout_height="48dp"
         android:layout_marginStart="10dp"
 

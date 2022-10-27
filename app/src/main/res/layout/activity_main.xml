@@ -13,7 +13,8 @@
         android:id="@+id/fragmentContainerView2"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="673dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
 
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,7 +23,8 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:labelVisibilityMode="labeled"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView2"
         app:menu="@menu/bottom_nav" />
 </LinearLayout>
