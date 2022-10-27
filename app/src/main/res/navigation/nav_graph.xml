@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/landing_fragment">
+
+    <fragment
+        android:id="@+id/landing_fragment"
+        android:name="com.chama.chefcito_2.landing_fragment"
+        android:label="landing_fragment"
+        tools:layout="@layout/landing_fragment" >
+        <action
+            android:id="@+id/action_landing_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.chama.chefcito_2.login_fragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" />
+</navigation>
