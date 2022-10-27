@@ -12,8 +12,10 @@
         android:fontFamily="@font/poppins_bold"
         android:text="@string/login"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="191dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -21,26 +23,12 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:text="Name"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="264dp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlinedTextField"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="331dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
-        android:hint="Username"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

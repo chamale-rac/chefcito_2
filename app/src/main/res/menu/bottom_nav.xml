@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:icon="@drawable/ic_baseline_home_24"
+        android:visible="true"
+
+        android:title="Home" />
+    <item
+        android:title= "Save"
+        android:visible="true"
+
+        android:icon = "@drawable/ic_baseline_bookmark_24"/>
+    <item
+        android:title="Create"
+        android:visible="true"
+
+        android:icon = "@drawable/ic_baseline_add_24"/>
+    <item
+        android:title="Profile"
+        android:visible="true"
+
+        android:icon = "@drawable/ic_baseline_person_24"/>
+</menu>
