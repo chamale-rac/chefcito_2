@@ -12,11 +12,13 @@
         tools:layout="@layout/landing_fragment" >
         <action
             android:id="@+id/action_landing_fragment_to_login_fragment"
-            app:destination="@id/login_fragment" />
+            app:destination="@id/login_fragment"
+            app:enterAnim="@anim/fade_in" />
 
         <action
             android:id="@+id/action_landing_fragment_to_signup_fragment2"
-            app:destination="@id/signup_fragment2" />
+            app:destination="@id/signup_fragment2"
+            app:enterAnim="@anim/fade_in" />
 
 
         <argument
@@ -27,16 +29,19 @@
         android:id="@+id/login_fragment"
         android:name="com.chama.chefcito_2.LoginFragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment" >
+        tools:layout="@layout/login_fragment"
+        >
         <argument
             android:name="ShowNavView"
             android:defaultValue="false" />
         <action
             android:id="@+id/action_login_fragment_to_landing_fragment"
-            app:destination="@id/landing_fragment" />
+            app:destination="@id/landing_fragment"
+            app:enterAnim="@anim/fade_in" />
         <action
             android:id="@+id/action_login_fragment_to_feedFragment"
-            app:destination="@id/feedFragment" />
+            app:destination="@id/feedFragment"
+            app:enterAnim="@anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/signup_fragment2"
@@ -51,10 +56,12 @@
 
         <action
             android:id="@+id/action_signup_fragment2_to_landing_fragment"
-            app:destination="@id/landing_fragment" />
+            app:destination="@id/landing_fragment"
+            app:enterAnim="@anim/fade_in" />
         <action
             android:id="@+id/action_signup_fragment2_to_feedFragment"
-            app:destination="@id/feedFragment" />
+            app:destination="@id/feedFragment"
+            app:enterAnim="@anim/fade_in" />
     </fragment>
 
     <fragment
@@ -66,6 +73,10 @@
         <argument
             android:name="ShowNavView"
             android:defaultValue="true" />
+        <action
+            android:id="@+id/action_feedFragment_to_insideRecipeFragment"
+            app:destination="@id/insideRecipeFragment"
+            app:enterAnim="@anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -78,7 +89,8 @@
             android:defaultValue="true" />
         <action
             android:id="@+id/action_profileFragment_to_profileSettingFragment"
-            app:destination="@id/profileSettingFragment" />
+            app:destination="@id/profileSettingFragment"
+            app:enterAnim="@anim/slide_in_right" />
         <action
             android:id="@+id/action_profileFragment_to_feedFragment"
             app:destination="@id/feedFragment" />
@@ -90,7 +102,8 @@
         android:layout="@layout/profile_settings_fragment">
         <action
             android:id="@+id/action_profileSettingFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/createRecipeFragment"
@@ -101,6 +114,26 @@
         <argument
             android:name="ShowNavView"
             android:defaultValue="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/insideRecipeFragment"
+        android:name="com.chama.chefcito_2.InsideRecipeFragment"
+        android:label="InsideRecipeFragment"
+        android:layout="@layout/inside_recipe_fragment">
+        <argument
+            android:name="image"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+
+        <argument
+            android:name="ShowNavView"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/action_insideRecipeFragment_to_feedFragment"
+            app:destination="@id/feedFragment"
+            app:enterAnim="@anim/fade_in" />
     </fragment>
 
 

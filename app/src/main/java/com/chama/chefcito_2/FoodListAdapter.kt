@@ -5,12 +5,13 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.chama.chefcito_2.databinding.ItemPostViewBinding
+import com.chama.chefcito_2.databinding.LandingFragmentBinding
 import com.chama.chefcito_2.model.FoodRecipe
 import com.squareup.picasso.Picasso
 
-class FoodListAdapter (private val pokemonList: List<FoodRecipe>) : RecyclerView.Adapter<FoodListAdapter.FoodListHolder>() {
+class FoodListAdapter (private val foodList: List<FoodRecipe>) : RecyclerView.Adapter<FoodListAdapter.FoodListHolder>() {
 
-    private val list = pokemonList;
+    private val list = foodList;
     inner class FoodListHolder(val binding: ItemPostViewBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodListHolder {
@@ -26,6 +27,11 @@ class FoodListAdapter (private val pokemonList: List<FoodRecipe>) : RecyclerView
         holder.binding.saveTextview.text = StringBuilder().append(item.saves.toString()).append("k")
         holder.binding.timeTextview.text = StringBuilder().append(item.time.toString()).append("min")
         Picasso.get().load(item.image).into(holder.binding.foodPhoto);
+
+        holder.itemView.setOnClickListener {
+            val action = FeedFragmentDirections.actionFeedFragmentToInsideRecipeFragment(item.image, item.name)
+            holder.itemView.findNavController().navigate(action)
+        }
     }
 
     override fun getItemCount(): Int {

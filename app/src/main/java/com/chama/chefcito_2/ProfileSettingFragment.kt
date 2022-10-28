@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
 import com.chama.chefcito_2.R
 
 class ProfileSettingFragment : Fragment() {
@@ -25,6 +26,9 @@ class ProfileSettingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val options = navOptions {
+        }
 
         val buttonBack = view.findViewById<Button>(R.id.backButton)
         buttonBack?.setOnClickListener{

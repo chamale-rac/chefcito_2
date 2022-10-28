@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ProfileAdapter() : RecyclerView.Adapter<ProfileAdapter.ViewHolder>() {
 
-    var data = listOf("This","Is","Just","A", "Test", "Bruh", "Bruh", "Bruh", "Bruh")
+    var data = listOf("This","Is","Just","A", "Test", "Bruh", "Bruh", "Bruh", "Bruh", "This","Is","Just","A", "Test", "Bruh", "Bruh", "Bruh", "Bruh")
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var image : ImageView
