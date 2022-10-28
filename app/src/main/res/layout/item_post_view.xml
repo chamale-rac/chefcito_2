@@ -21,7 +21,7 @@
         >
 
         <androidx.cardview.widget.CardView
-            android:layout_width="331dp"
+            android:layout_width="317dp"
             android:layout_height="match_parent"
             android:gravity="start"
 
@@ -30,14 +30,14 @@
 
             <ImageView
                 android:id="@+id/food_photo"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 tools:srcCompat="@drawable/hamburger_image" />
 
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/food_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
@@ -48,6 +48,12 @@
                 android:text="Hamburger and fries"
                 android:textColor="@color/white"
                 android:textSize="22dp"
+
+                android:shadowColor="#000000"
+                android:shadowDx="1.5"
+                android:shadowDy="1.3"
+                android:shadowRadius="1.6"
+                android:textAllCaps="true"
 
                 card_view:fontFamily="@font/poppins_bold" />
 

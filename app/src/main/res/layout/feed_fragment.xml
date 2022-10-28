@@ -10,41 +10,47 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
 
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerViewPosts">
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewPosts"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/filter_button"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Filter"
-            android:elevation="10dp"
-            android:textAllCaps="false"
-            android:layout_marginLeft="15dp"
-            android:backgroundTint="@color/pink"
 
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/pink"
+            android:elevation="10dp"
             android:fontFamily="@font/roboto_condensed_regular"
-            app:cornerRadius="50dp"
-            />
+            android:text="Filter"
+
+            android:textAllCaps="false"
+            app:cornerRadius="50dp" />
 
         <Button
+            android:layout_marginBottom="10dp"
             android:id="@+id/button"
             android:layout_width="30dp"
+            android:layout_marginTop="15dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:elevation="10dp"
-            android:text="Trending"
-            android:textAllCaps="false"
             android:layout_marginLeft="15dp"
+            android:layout_weight="1"
             android:backgroundTint="@color/yellow"
-
+            android:elevation="10dp"
             android:fontFamily="@font/roboto_condensed_regular"
-            app:cornerRadius="50dp"
-            />
+            android:text="Trending"
+
+            android:textAllCaps="false"
+            app:cornerRadius="50dp" />
 
         <android.widget.SearchView
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -54,7 +60,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewPosts"
         android:layout_width="match_parent"
-        android:layout_height="683dp"
+        android:layout_height="640dp"
         app:layoutManager="GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
