@@ -13,4 +13,11 @@
     <style name="btn_style" parent="Widget.MaterialComponents.Button">
         <item name="tint">@color/white</item>
     </style>
+
+
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>item>
+    </style>
+
 </resources>

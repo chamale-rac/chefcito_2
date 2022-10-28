@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/suspend_account_profile_settings_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="55dp"
+        android:text="Suspend Account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/chng_password_profile_settings_txtView"
+        app:layout_constraintTop_toBottomOf="@+id/private_account_profile_settings_switch" />
+
+    <TextView
+        android:id="@+id/delete_account_profile_settings_txtView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="55dp"
+        android:text="Delete Account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/chng_password_profile_settings_txtView"
+        app:layout_constraintTop_toBottomOf="@+id/private_account_profile_settings_switch" />
+
+    <TextView
+        android:id="@+id/chng_password_profile_settings_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="55dp"
+        android:text="Change password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/delete_account_profile_settings_txtView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/private_account_profile_settings_switch" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_profile_settings"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="11dp"
+        android:hint="Profile Name"
+        app:layout_constraintBottom_toTopOf="@+id/user_name_profile_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user_name_profile_settings"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="11dp"
+        android:hint="Username"
+        app:layout_constraintBottom_toTopOf="@+id/user_description_profile_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user_description_profile_settings"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="380dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="30dp"
+        android:hint="User description"
+        app:layout_constraintBottom_toTopOf="@+id/allow_notifications_profile_settings_switch2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/profile_settings_tittle_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="146dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/profile_settings_tittle"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/name_profile_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_back2"
+        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="156dp"
+        android:backgroundTint="@color/transparent"
+        android:fontFamily="@font/roboto_condensed_regular"
+        app:icon="@drawable/ic_baseline_arrow_back_24"
+        app:iconGravity="textEnd"
+        app:layout_constraintBottom_toTopOf="@+id/name_profile_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/private_account_profile_settings_switch"
+        android:layout_width="332dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="40dp"
+        android:text="Private account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/allow_notifications_profile_settings_switch2" />
+
+    <Switch
+        android:id="@+id/allow_notifications_profile_settings_switch2"
+        android:layout_width="331dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="19dp"
+        android:text="Allow notifications"
+        app:layout_constraintBottom_toTopOf="@+id/private_account_profile_settings_switch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_description_profile_settings" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
