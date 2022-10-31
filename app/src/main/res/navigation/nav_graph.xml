@@ -13,12 +13,14 @@
         <action
             android:id="@+id/action_landing_fragment_to_login_fragment"
             app:destination="@id/login_fragment"
-            app:enterAnim="@anim/fade_in" />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
 
         <action
             android:id="@+id/action_landing_fragment_to_signup_fragment2"
             app:destination="@id/signup_fragment2"
-            app:enterAnim="@anim/fade_in" />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
 
 
         <argument
@@ -37,7 +39,8 @@
         <action
             android:id="@+id/action_login_fragment_to_landing_fragment"
             app:destination="@id/landing_fragment"
-            app:enterAnim="@anim/fade_in" />
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_login_fragment_to_feedFragment"
             app:destination="@id/feedFragment"
@@ -126,6 +129,9 @@
         <argument
             android:name="name"
             app:argType="string" />
+        <argument
+            android:name="from"
+            app:argType="string" />
 
         <argument
             android:name="ShowNavView"
@@ -134,6 +140,23 @@
             android:id="@+id/action_insideRecipeFragment_to_feedFragment"
             app:destination="@id/feedFragment"
             app:enterAnim="@anim/fade_in" />
+        <action
+            android:id="@+id/action_insideRecipeFragment_to_savedFragment"
+            app:destination="@id/savedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.chama.chefcito_2.SavedFragment"
+        android:label="SavedFragment" >
+
+
+        <argument
+            android:name="ShowNavView"
+            android:defaultValue="true" />
+
+        <action
+            android:id="@+id/action_savedFragment_to_insideRecipeFragment"
+            app:destination="@id/insideRecipeFragment" />
     </fragment>
 
 

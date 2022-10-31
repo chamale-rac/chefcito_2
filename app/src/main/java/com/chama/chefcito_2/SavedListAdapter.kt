@@ -5,21 +5,20 @@ import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.chama.chefcito_2.databinding.ItemPostViewBinding
-import com.chama.chefcito_2.databinding.LandingFragmentBinding
 import com.chama.chefcito_2.model.FoodRecipe
 import com.squareup.picasso.Picasso
 
-class FoodListAdapter (private val foodList: List<FoodRecipe>) : RecyclerView.Adapter<FoodListAdapter.FoodListHolder>() {
+class SavedListAdapter (private val savedList: List<FoodRecipe>) : RecyclerView.Adapter<SavedListAdapter.SavedListHolder>() {
 
-    private val list = foodList;
-    inner class FoodListHolder(val binding: ItemPostViewBinding) : RecyclerView.ViewHolder(binding.root)
+    private val list = savedList;
+    inner class SavedListHolder(val binding: ItemPostViewBinding) : RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodListHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SavedListHolder {
         val binding = ItemPostViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return FoodListHolder(binding)
+        return SavedListHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: FoodListHolder, position: Int) {
+    override fun onBindViewHolder(holder: SavedListHolder, position: Int) {
         val item = list[position]
 
         holder.binding.foodName.text = item.name
@@ -29,7 +28,7 @@ class FoodListAdapter (private val foodList: List<FoodRecipe>) : RecyclerView.Ad
         Picasso.get().load(item.image).into(holder.binding.foodPhoto);
 
         holder.itemView.setOnClickListener {
-            val action = FeedFragmentDirections.actionFeedFragmentToInsideRecipeFragment(item.image, item.name, "feed")
+            val action = SavedFragmentDirections.actionSavedFragmentToInsideRecipeFragment(item.image, item.name, "saved")
             holder.itemView.findNavController().navigate(action)
         }
     }

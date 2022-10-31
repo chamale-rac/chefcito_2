@@ -65,11 +65,11 @@
         android:id="@+id/imageView"
         android:layout_width="417dp"
         android:layout_height="533dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="284dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outlinedTextField_email_v"
-        app:srcCompat="@drawable/wave" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/right_wave" />
 
     <Button
         android:id="@+id/button_next"

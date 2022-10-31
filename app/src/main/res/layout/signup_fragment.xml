@@ -117,8 +117,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/outlinedTextField_password"
-        app:layout_constraintVertical_bias="0.226"
-        app:srcCompat="@drawable/wave" />
+        app:layout_constraintVertical_bias="0.691"
+        app:srcCompat="@drawable/right_wave" />
 
     <Button
         android:id="@+id/button_next"

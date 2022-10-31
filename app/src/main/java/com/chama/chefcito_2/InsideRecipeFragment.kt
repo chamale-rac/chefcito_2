@@ -16,6 +16,7 @@ class InsideRecipeFragment : Fragment() {
     companion object {
         val IMAGE = "image"
         val NAME = "name"
+        val FROM = "from"
     }
 
     private var _binding: InsideRecipeFragmentBinding? = null
@@ -24,12 +25,14 @@ class InsideRecipeFragment : Fragment() {
 
     private lateinit var image: String
     private lateinit var name: String
+    private lateinit var from: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             image = it.getString(IMAGE).toString()
             name = it.getString(NAME).toString()
+            from = it.getString(FROM).toString()
         }
     }
 
@@ -49,7 +52,7 @@ class InsideRecipeFragment : Fragment() {
 
         val buttonBack = view.findViewById<Button>(R.id.backButton2)
         buttonBack?.setOnClickListener{
-            findNavController().navigate(R.id.action_insideRecipeFragment_to_feedFragment)
+            findNavController().navigateUp()
         }
     }
 

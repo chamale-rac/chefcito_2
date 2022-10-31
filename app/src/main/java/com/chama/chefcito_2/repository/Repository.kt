@@ -13,4 +13,11 @@ class Repository {
             FoodRecipe(6, "Homemade Ramen",2, 2, 40, "https://www.killingthyme.net/wp-content/uploads/2015/10/homemade-ramen-bowls-5.jpg")
         )
     }
+
+    fun getFoodSavedList(): MutableList<FoodRecipe> {
+        return mutableListOf(
+            FoodRecipe(2, "Pizza", 7, 1, 30,"https://www.saborusa.com/wp-content/uploads/2019/12/origen-de-la-pizza-1.jpg"),
+            FoodRecipe(5, "Kak'ik de pollo",52, 8, 30, "https://alimentatedelobueno.com/storage/778/kakik.png")
+        )
+    }
 }
