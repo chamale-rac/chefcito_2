@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1063879907288",
+    "project_id": "chefcitoapp-63912",
+    "storage_bucket": "chefcitoapp-63912.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1063879907288:android:1ef5d6a571c1edbcc8c4ad",
+        "android_client_info": {
+          "package_name": "com.chama.chefcito_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1063879907288-siig1u51fdf2pqq2mt60u5bps4agok92.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVDR-Ghs71YIUgHEAgXl-2ZgqhBJ8CQHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1063879907288-siig1u51fdf2pqq2mt60u5bps4agok92.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

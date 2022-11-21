@@ -1,13 +1,12 @@
 package com.chama.chefcito_2
 
 import android.os.Bundle
-import android.provider.SyncStateContract
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import com.chama.chefcito_2.databinding.FeedFragmentBinding
 import com.chama.chefcito_2.model.FoodRecipe
@@ -42,6 +41,7 @@ class FeedFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = binding.recyclerViewPosts
         recyclerView.adapter = FoodListAdapter(myResults)
+
     }
 
 

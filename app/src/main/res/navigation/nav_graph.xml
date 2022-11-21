@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/landing_fragment"
-        android:name="com.chama.chefcito_2.landing_fragment"
+        android:name="com.chama.chefcito_2.LandingFragment"
         android:label="landing_fragment"
         tools:layout="@layout/landing_fragment" >
         <action
@@ -26,6 +26,9 @@
         <argument
             android:name="ShowNavView"
             android:defaultValue="false" />
+        <action
+            android:id="@+id/action_landing_fragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
     </fragment>
     <fragment
         android:id="@+id/login_fragment"
@@ -44,11 +47,15 @@
         <action
             android:id="@+id/action_login_fragment_to_feedFragment"
             app:destination="@id/feedFragment"
-            app:enterAnim="@anim/fade_in" />
+            app:enterAnim="@anim/fade_in"
+            app:popUpTo="@id/my_nav"
+            app:popUpToInclusive="true"
+
+            />
     </fragment>
     <fragment
         android:id="@+id/signup_fragment2"
-        android:name="com.chama.chefcito_2.signup_fragment"
+        android:name="com.chama.chefcito_2.SignupFragment"
         android:label="signup_fragment"
         tools:layout="@layout/signup_fragment"
         >
@@ -64,6 +71,10 @@
         <action
             android:id="@+id/action_signup_fragment2_to_feedFragment"
             app:destination="@id/feedFragment"
+            app:enterAnim="@anim/fade_in" />
+        <action
+            android:id="@+id/action_signup_fragment2_to_login_fragment"
+            app:destination="@id/login_fragment"
             app:enterAnim="@anim/fade_in" />
     </fragment>
 
@@ -107,6 +118,12 @@
             android:id="@+id/action_profileSettingFragment_to_profileFragment"
             app:destination="@id/profileFragment"
             app:enterAnim="@anim/fade_in" />
+        <action
+            android:id="@+id/action_profileSettingFragment_to_landing_fragment"
+            app:destination="@id/landing_fragment"
+            app:popUpTo="@id/my_nav"
+            app:popUpToInclusive="true"
+            />
     </fragment>
     <fragment
         android:id="@+id/createRecipeFragment"
