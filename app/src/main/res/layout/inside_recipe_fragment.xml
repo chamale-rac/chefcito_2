@@ -10,39 +10,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="624dp"
+        android:layout_marginStart="291dp"
+        android:layout_marginTop="650dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="59dp"
-        android:layout_weight="1"
+        android:layout_marginBottom="60dp"
 
+        android:layout_weight="1"
         android:backgroundTint="@color/pink"
         android:elevation="10dp"
         android:fontFamily="@font/roboto_condensed_regular"
-        android:text="Publish"
+        android:text="Add"
         android:textAllCaps="false"
         app:cornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/filter_button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="624dp"
-        android:layout_marginBottom="59dp"
-
-        android:layout_weight="1"
-        android:backgroundTint="@color/yellow"
-        android:elevation="10dp"
-        android:fontFamily="@font/roboto_condensed_regular"
-        android:text="Previous"
-        android:textAllCaps="false"
-        app:cornerRadius="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -66,45 +47,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="74dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/poppins_bold"
         android:text="@string/recipe01"
-        android:textSize="34sp"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/foodImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backButton2" />
-
-    <Button
-        android:id="@+id/backButton2"
-        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-        android:layout_width="60dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="10dp"
-
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/transparent"
-        android:fontFamily="@font/roboto_condensed_regular"
-        app:icon="@drawable/ic_baseline_arrow_back_24"
-        app:iconGravity="textEnd"
-        app:layout_constraintBottom_toTopOf="@+id/foodName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
 
-        android:scaleType="centerCrop"
         android:id="@+id/foodImage"
         android:layout_width="378dp"
         android:layout_height="147dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="17dp"
         android:layout_marginBottom="25dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/profile_settings_tittle_txtView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -123,6 +86,7 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/filter_button3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_settings_tittle_txtView2" />
 
