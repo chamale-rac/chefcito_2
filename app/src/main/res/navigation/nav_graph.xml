@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/login_fragment"
-        android:name="com.chama.chefcito_2.LoginFragment"
+        android:name="com.chama.chefcito_2.view.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/login_fragment"
         >
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/signup_fragment2"
-        android:name="com.chama.chefcito_2.signup_fragment"
+        android:name="com.chama.chefcito_2.view.SignupFragment"
         android:label="signup_fragment"
         tools:layout="@layout/signup_fragment"
         >
@@ -69,7 +69,7 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="com.chama.chefcito_2.FeedFragment"
+        android:name="com.chama.chefcito_2.view.FeedFragment"
         android:label="FeedFragment"
         tools:layout="@layout/feed_fragment"
         >
@@ -83,7 +83,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.chama.chefcito_2.profile_fragment"
+        android:name="com.chama.chefcito_2.view.ProfileFragment"
         android:label="profile_fragment"
         android:layout="@layout/profile_fragment"
         >
@@ -100,7 +100,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileSettingFragment"
-        android:name="com.chama.chefcito_2.ProfileSettingFragment"
+        android:name="com.chama.chefcito_2.view.ProfileSettingFragment"
         android:label="ProfileSettingFragment"
         android:layout="@layout/profile_settings_fragment">
         <action
@@ -110,7 +110,7 @@
     </fragment>
     <fragment
         android:id="@+id/createRecipeFragment"
-        android:name="com.chama.chefcito_2.CreateRecipeFragment"
+        android:name="com.chama.chefcito_2.view.CreateRecipeFragment"
         android:label="CreateRecipeFragment"
         android:layout="@layout/create_recipe_fragment">
 
@@ -120,17 +120,14 @@
     </fragment>
     <fragment
         android:id="@+id/insideRecipeFragment"
-        android:name="com.chama.chefcito_2.InsideRecipeFragment"
+        android:name="com.chama.chefcito_2.view.InsideRecipeFragment"
         android:label="InsideRecipeFragment"
         android:layout="@layout/inside_recipe_fragment">
         <argument
             android:name="image"
             app:argType="string" />
         <argument
-            android:name="name"
-            app:argType="string" />
-        <argument
-            android:name="from"
+            android:name="title"
             app:argType="string" />
 
         <argument
@@ -146,7 +143,7 @@
     </fragment>
     <fragment
         android:id="@+id/savedFragment"
-        android:name="com.chama.chefcito_2.SavedFragment"
+        android:name="com.chama.chefcito_2.view.SavedFragment"
         android:label="SavedFragment" >
 
 

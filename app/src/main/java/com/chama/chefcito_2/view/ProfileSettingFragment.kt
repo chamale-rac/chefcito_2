@@ -1,15 +1,16 @@
-package com.chama.chefcito_2
+package com.chama.chefcito_2.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navOptions
+import com.chama.chefcito_2.R
 
-
-class LoginFragment : Fragment() {
+class ProfileSettingFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,21 +21,21 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.login_fragment, container, false)
+        return inflater.inflate(R.layout.profile_settings_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val buttonBack = view.findViewById<Button>(R.id.backButton)
-        buttonBack?.setOnClickListener{
-            findNavController().navigate(R.id.action_login_fragment_to_landing_fragment)
+        val options = navOptions {
         }
 
-        val buttonNext = view.findViewById<Button>(R.id.button_next)
-        buttonNext?.setOnClickListener {
-            findNavController().navigate(R.id.action_login_fragment_to_feedFragment)
+        val buttonBack = view.findViewById<Button>(R.id.backButton)
+        buttonBack?.setOnClickListener{
+            findNavController().navigate(R.id.action_profileSettingFragment_to_profileFragment)
         }
+
+
     }
 
 }

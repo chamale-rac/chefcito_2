@@ -1,12 +1,12 @@
-package com.chama.chefcito_2
+package com.chama.chefcito_2.view
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.chama.chefcito_2.R
 
 class ProfileAdapter() : RecyclerView.Adapter<ProfileAdapter.ViewHolder>() {
 
@@ -22,12 +22,12 @@ class ProfileAdapter() : RecyclerView.Adapter<ProfileAdapter.ViewHolder>() {
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProfileAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         var view = LayoutInflater.from(parent.context).inflate(R.layout.profile_recipe_item_view, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ProfileAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var recipe = data[position]
         holder.recipeName.text = recipe
 
