@@ -1,17 +1,15 @@
 package com.chama.chefcito_2
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.chama.chefcito_2.databinding.LoginFragmentBinding
-import com.chama.chefcito_2.databinding.SignupFragmentBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class LoginFragment : Fragment() {
@@ -20,17 +18,12 @@ class LoginFragment : Fragment() {
     private var _binding: LoginFragmentBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = LoginFragmentBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,17 +38,14 @@ class LoginFragment : Fragment() {
         val buttonBack = binding.backButton
         val buttonNext = binding.buttonNext
 
-
-
         buttonBack.setOnClickListener{
             findNavController().navigate(R.id.action_login_fragment_to_landing_fragment)
         }
 
-
-
         buttonNext.setOnClickListener {
             val email = binding.outlinedTextFieldEmailV.editText?.text.toString()
             val password = binding.outlinedTextFieldPasswordV.editText?.text.toString()
+
 
             if (email.isNotBlank() && password.isNotBlank()){
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {

@@ -1,6 +1,7 @@
 package com.chama.chefcito_2
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,13 +11,20 @@ import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.chama.chefcito_2.databinding.ProfileFragmentBinding
+import com.chama.chefcito_2.databinding.SignupFragmentBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class profile_fragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var profileAdapter: ProfileAdapter
-
+    private var db = FirebaseFirestore.getInstance()
+    private lateinit var firebaseAuth: FirebaseAuth
+    private var _binding: ProfileFragmentBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +36,21 @@ class profile_fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.profile_fragment, container, false)
+        _binding = ProfileFragmentBinding.inflate(inflater, container, false)
+        firebaseAuth = FirebaseAuth.getInstance()
+        val docRef = db.collection("users").document(firebaseAuth.currentUser?.email.toString())
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    binding.profileName.setText(document.data?.get("username").toString())
+                } else {
+                    Log.d("Error", "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d("Bruh", "get failed with ", exception)
+            }
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,7 +60,11 @@ class profile_fragment : Fragment() {
         recyclerView.layoutManager = GridLayoutManager(view.context,3)
         recyclerView.adapter = ProfileAdapter()
 
-        val buttonBack = view.findViewById<ImageButton>(R.id.backButtonProfile)
+
+
+
+        val buttonBack = binding.backButtonProfile
+
         buttonBack?.setOnClickListener{
             findNavController().navigate(R.id.action_profileFragment_to_feedFragment)
         }
@@ -48,6 +73,10 @@ class profile_fragment : Fragment() {
         buttonProfileSetting?.setOnClickListener{
             findNavController().navigate(R.id.action_profileFragment_to_profileSettingFragment)
         }
+
+
+
+
     }
 
 

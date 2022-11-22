@@ -9,10 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.chama.chefcito_2.databinding.SignupFragmentBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignupFragment : Fragment() {
 
     private lateinit var firebaseAuth: FirebaseAuth
+    private var db = FirebaseFirestore.getInstance()
     private var _binding: SignupFragmentBinding? = null
     private val binding get() = _binding!!
 
@@ -21,8 +23,7 @@ class SignupFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = SignupFragmentBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,13 +42,17 @@ class SignupFragment : Fragment() {
 
             val email = binding.outlinedTextFieldEmailV.editText?.text.toString()
             val password = binding.outlinedTextFieldPassword.editText?.text.toString()
+            val username = binding.outlinedTextFieldUsernameV.editText?.text.toString()
             val confirmPass = binding.outlinedTextFieldPasswordConfirm.editText?.text.toString()
 
             if (email.isNotBlank() && password.isNotBlank() && password.equals(confirmPass)) {
-
+                db.collection("users").document(email).set(
+                    hashMapOf("username" to username, "recipes" to arrayListOf(null), "saved_recipes" to arrayListOf(null))
+                )
                 firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                     if (it.isSuccessful) {
                         Toast.makeText(activity, "Succesfully Registered", Toast.LENGTH_LONG).show()
+
                         firebaseAuth.signOut()
                         findNavController().navigate(R.id.action_signup_fragment2_to_login_fragment)
                     } else {
@@ -57,6 +62,7 @@ class SignupFragment : Fragment() {
             }
 
         }
+
     }
 
 
