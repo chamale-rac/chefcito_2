@@ -63,7 +63,7 @@ class SavedFragment : Fragment() {
                     saved_recipes = document.data?.get("saved_recipes") as ArrayList<String>
                     Log.d("Please",document.data?.get("username").toString())
                 } else {
-                    Log.d("Error", "No such document")
+                    Log.d("Error", " such document")
                 }
             }
             .addOnFailureListener { exception ->

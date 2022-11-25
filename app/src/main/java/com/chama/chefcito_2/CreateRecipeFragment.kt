@@ -78,7 +78,6 @@ class CreateRecipeFragment : Fragment() {
         }
 
         var userID = db.collection("users").document(firebaseAuth.currentUser?.email.toString())
-        var documentId = ""
 
         binding.Publish.setOnClickListener {
             val fireRecipe = hashMapOf(
@@ -95,15 +94,13 @@ class CreateRecipeFragment : Fragment() {
             db.collection("recipes")
                 .add(fireRecipe)
                 .addOnSuccessListener { documentReference ->
-                    documentId = documentReference.id
-                    Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                        userID.update("recipes", FieldValue.arrayUnion(documentReference.id))
                 }
                 .addOnFailureListener { e ->
                     Log.w(TAG, "Error adding document", e)
                 }
         }
 
-        userID.update("recipes", FieldValue.arrayUnion(documentId))
 
     }
 

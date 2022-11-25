@@ -7,12 +7,12 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Recipe(
-    val title: String = "",
+    val author: String = "Chefcito Team",
     val image: String = "",
     val ingredients: ArrayList<String> = arrayListOf(),
     val liked: Int = 0,
     val saved: Int = 0,
     val steps: ArrayList<String> = arrayListOf(),
-    val author: String = "Chefcito Team",
+    val title: String = "",
     @DocumentId val docId: String = ""
 ): Parcelable

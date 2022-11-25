@@ -30,29 +30,6 @@
 
 
 
-    <Button
-        android:id="@+id/filter_button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="291dp"
-        android:layout_marginTop="650dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="60dp"
-
-        android:layout_weight="1"
-        android:backgroundTint="@color/pink"
-        android:elevation="10dp"
-        android:fontFamily="@font/roboto_condensed_regular"
-        android:text="Add"
-        android:textAllCaps="false"
-        app:cornerRadius="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
     <TextView
         android:id="@+id/profile_settings_tittle_txtView2"
         android:layout_width="379dp"
@@ -61,6 +38,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/poppins_medium"
         android:text="@string/recipe01_step01_tittle"
+        android:gravity="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -102,25 +80,26 @@
 
     <ListView
         android:id="@+id/stepsListView"
-        android:nestedScrollingEnabled="true"
+        android:layout_width="match_parent"
 
+        android:layout_height="match_parent"
+        android:layout_marginTop="450dp"
+        android:layout_marginBottom="10dp"
         android:alwaysDrawnWithCache="true"
         android:dividerHeight="3dp"
         android:horizontalSpacing="3dp"
+        android:nestedScrollingEnabled="true"
+
+
         android:scrollingCache="true"
         android:smoothScrollbar="true"
         android:stretchMode="columnWidth"
         android:verticalSpacing="3dp"
-
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="375dp"
-        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foodName"
-        />
+        app:layout_constraintVertical_bias="0.627" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
