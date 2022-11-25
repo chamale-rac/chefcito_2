@@ -82,7 +82,7 @@ class CreateRecipeFragment : Fragment() {
 
         binding.Publish.setOnClickListener {
             val fireRecipe = hashMapOf(
-                "author" to userID,
+                "author" to firebaseAuth.currentUser?.email.toString(),
                 "image" to imageURL,
                 "ingredients" to ingredientsArr,
                 "liked" to 0,

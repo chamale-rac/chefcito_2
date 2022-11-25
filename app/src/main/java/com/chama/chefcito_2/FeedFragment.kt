@@ -57,6 +57,8 @@ class FeedFragment : Fragment() {
         recipeAdapter = FeedRecipeAdapter(options)
         recyclerView  = binding.recyclerViewPosts
         recyclerView.adapter = recipeAdapter
+
+
     }
 
 
