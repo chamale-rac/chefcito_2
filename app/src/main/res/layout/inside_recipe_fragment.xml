@@ -37,8 +37,8 @@
         android:fontFamily="@font/poppins_medium"
         android:text="@string/recipe01_step01_tittle"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/multiAutoCompleteTextView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/foodImage" />
 
@@ -74,20 +74,87 @@
         app:layout_constraintTop_toBottomOf="@+id/foodName"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <MultiAutoCompleteTextView
-        android:id="@+id/multiAutoCompleteTextView2"
-        android:layout_width="380dp"
-        android:layout_height="237dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="11dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/recipe01_step01_description"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/filter_button3"
+    <!-- Horizontal scrollView -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="375dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_settings_tittle_txtView2" />
+        app:layout_constraintTop_toBottomOf="@+id/foodName">
+
+        <!-- using linear layout to store multiple view
+            inside a Horizontal Scroll View -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <!-- multiple button views to show a scrollable horizontal list -->
+            <Button
+                android:id="@+id/C"
+                android:layout_width="385dp"
+                android:layout_height="225dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/white"
+                android:padding="4dp"
+                android:text="GeeksforGeeks"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/Co"
+                android:layout_width="385dp"
+                android:layout_height="225dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/white"
+                android:padding="4dp"
+                android:text="GeeksforGeeks"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/L"
+                android:layout_width="385dp"
+                android:layout_height="225dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/white"
+                android:padding="4dp"
+                android:text="GeeksforGeeks"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/Ha"
+                android:layout_width="385dp"
+                android:layout_height="225dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/white"
+                android:padding="4dp"
+                android:text="GeeksforGeeks"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/Hah"
+                android:layout_width="385dp"
+                android:layout_height="225dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/white"
+                android:padding="4dp"
+                android:text="GeeksforGeeks"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/ge"
+                android:layout_width="385dp"
+                android:layout_height="225dp"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/white"
+                android:padding="4dp"
+                android:text="GeeksforGeeks"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
