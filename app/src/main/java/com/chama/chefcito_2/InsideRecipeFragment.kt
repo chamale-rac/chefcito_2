@@ -1,39 +1,41 @@
 package com.chama.chefcito_2
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.chama.chefcito_2.databinding.InsideRecipeFragmentBinding
+import com.chama.chefcito_2.model.Recipe
 import com.squareup.picasso.Picasso
 
 class InsideRecipeFragment : Fragment() {
-
-    companion object {
-        val IMAGE = "image"
-        val NAME = "name"
-        val FROM = "from"
-    }
 
     private var _binding: InsideRecipeFragmentBinding? = null
     private val binding get() = _binding!!
 
 
-    private lateinit var image: String
-    private lateinit var name: String
-    private lateinit var from: String
+    private lateinit var recipe: Recipe
+
+
+    lateinit var stepsArr: ArrayList<String>
+    lateinit var ingredientsArr: ArrayList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            image = it.getString(IMAGE).toString()
-            name = it.getString(NAME).toString()
-            from = it.getString(FROM).toString()
+        val bundle = arguments
+        if(bundle == null) {
+            Log.e("KWA", "INFORMATION NOT RECEIVED")
+            return
         }
+
+        val args = InsideRecipeFragmentArgs.fromBundle(bundle)
+        recipe = args.recipe
     }
 
     override fun onCreateView(
@@ -47,10 +49,22 @@ class InsideRecipeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Picasso.get().load(image).into(binding.foodImage);
-        binding.foodName.text = name
+        Picasso.get().load(recipe.image).into(binding.foodImage);
+        binding.foodName.text = recipe.title
+        stepsArr = recipe.steps
+        ingredientsArr = recipe.ingredients
 
-        val buttonBack = view.findViewById<Button>(R.id.backButton2)
+        val adapter: ArrayAdapter<String?> = ArrayAdapter<String?>(
+            requireActivity(),
+            android.R.layout.simple_list_item_1,
+            stepsArr as List<String?>
+        )
+
+        binding.stepsListView.adapter = adapter
+        adapter.notifyDataSetChanged()
+
+
+        val buttonBack = binding.backButton
         buttonBack?.setOnClickListener{
             findNavController().navigateUp()
         }

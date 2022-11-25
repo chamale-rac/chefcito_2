@@ -1,8 +1,11 @@
 package com.chama.chefcito_2.model
 
 import com.google.firebase.firestore.DocumentId
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
 
+@Parcelize
 data class Recipe(
     val title: String = "",
     val image: String = "",
@@ -12,4 +15,4 @@ data class Recipe(
     val steps: ArrayList<String> = arrayListOf(),
     val author: String = "Chefcito Team",
     @DocumentId val docId: String = ""
-)
+): Parcelable

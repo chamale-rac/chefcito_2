@@ -1,167 +1,341 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/make_recipe_tittle_txtView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/createRecipeTittle"
-        android:textSize="47sp"
-        app:layout_constraintBottom_toTopOf="@+id/RecipeNametxtField"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Ingredients_textField"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="331dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="34dp"
-        android:hint="Ingredients"
-        app:layout_constraintBottom_toTopOf="@+id/RecipeTools"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.363"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine">
+        <TextView
+            android:id="@+id/child_scroll"
 
-        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
+            android:text="Create Recipe"
+            android:textSize="47sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/headline"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/child_scroll"
+
+            android:layout_marginBottom="10dp"
+            android:hint="Title"
+            app:layout_constraintHorizontal_bias="0.333"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ImageSelectorCardView"
+
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headline"
+
+            card_view:cardUseCompatPadding="true"
+            card_view:cardElevation="4dp"
+            card_view:cardCornerRadius="3dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/viewImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:src="@mipmap/ic_launcher" />
+
+
+                <Button
+                    android:id="@+id/btnChoosePhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/viewImage"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:elevation="10dp"
+
+                    android:text="Choose Photo"
+                    android:textAllCaps="false"
+                    app:cornerRadius="50dp"
+                    />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/stepsCardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="4dp"
+
+            app:cardUseCompatPadding="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ImageSelectorCardView">
+
+            <LinearLayout
+
+                android:id="@+id/stepsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+
+                app:layout_constraintRight_toRightOf="parent"
+
+                >
+
+                <TextView
+                    android:id="@+id/stepsSectionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Steps"
+                    android:layout_marginLeft="5dp"
+
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/stepsAdviceText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="press to delete step"
+
+
+                    android:layout_marginLeft="5dp"
+                    android:textSize="15sp"
+
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/LinearGroupSteps"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+
+                    <EditText
+                        android:id="@+id/stepsEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:layout_toLeftOf="@id/stepsAddButton"
+                        android:layout_weight="3"
+                        android:hint="Enter step..." />
+
+                    <!--button for adding item from edit text to list-->
+                    <Button
+                        android:id="@+id/stepsAddButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:text="Add"
+                        app:cornerRadius="50dp" />
+
+                </LinearLayout>
+
+
+                <!--list view to display list of languages-->
+                <ListView
+                    android:id="@+id/stepsListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+
+
+                    android:layout_below="@id/LinearGroupSteps"
+                    android:layout_marginBottom="10dp"
+                    android:alwaysDrawnWithCache="true"
+                    android:dividerHeight="3dp"
+                    android:horizontalSpacing="3dp"
+                    android:nestedScrollingEnabled="true"
+                    android:scrollingCache="true"
+                    android:smoothScrollbar="true"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="3dp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/ingredientsCardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="3dp"
+            app:cardElevation="4dp"
+
+            app:cardUseCompatPadding="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stepsCardView">
+
+
+            <LinearLayout
+
+                android:id="@+id/ingredientsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+
+                android:orientation="vertical"
+
+                >
+                <TextView
+                    android:id="@+id/ingredientsSectionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ingredients"
+
+                    android:layout_marginLeft="5dp"
+
+                    android:textSize="20sp"
+                    />
+
+                <TextView
+                    android:id="@+id/ingredientsAdviceText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="press to delete ingredient"
+                    android:textStyle="bold"
+
+
+                    android:layout_marginLeft="5dp"
+                    android:textSize="15sp"
+                    />
+
+
+                <LinearLayout
+
+                    android:id="@+id/LinearGroupIngredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    >
+
+
+                    <EditText
+                        android:id="@+id/ingredientsEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:layout_weight="3"
+                        android:layout_toLeftOf="@id/stepsAddButton"
+                        android:hint="Enter ingredient..." />
+
+                    <!--button for adding item from edit text to list-->
+                    <Button
+                        android:id="@+id/ingredientsAddButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="4dp"
+                        android:layout_weight="1"
+                        android:text="Add"
+                        app:cornerRadius="50dp"
+                        />
+
+                </LinearLayout>
+
+
+                <!--list view to display list of languages-->
+                <ListView
+                    android:id="@+id/ingredientsListView"
+                    android:nestedScrollingEnabled="true"
+                    android:layout_below="@id/LinearGroupIngredients"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:alwaysDrawnWithCache="true"
+                    android:dividerHeight="3dp"
+                    android:horizontalSpacing="3dp"
+                    android:scrollingCache="true"
+                    android:smoothScrollbar="true"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="3dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:id="@+id/Publish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:elevation="10dp"
 
-    </com.google.android.material.textfield.TextInputLayout>
+            android:text="Publish"
+            app:cornerRadius="50dp"
 
-    <EditText
-        android:id="@+id/editTextTextMultiLine"
-        android:layout_width="335dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginEnd="34dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:textSize="16sp"
-        android:hint="Instructions:"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/Ingredients_textField"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RecipeNametxtField" />
+            app:cardUseCompatPadding="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ingredientsCardView"
+            />
 
-    <EditText
-        android:id="@+id/editTextTextMultiLine3"
-        android:layout_width="332dp"
-        android:layout_height="98dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="66dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Notes:"
-        android:textSize="16sp"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RecipeTools" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/RecipeNametxtField"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="331dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="10dp"
-        android:hint="Recipe Name"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/make_recipe_tittle_txtView">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/RecipeTools"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="327dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="34dp"
-        android:layout_marginBottom="5dp"
-        android:hint="Recipe Tools!"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.363"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Ingredients_textField">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/filter_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="624dp"
-        android:layout_marginEnd="39dp"
-        android:layout_weight="1"
-        android:backgroundTint="@color/pink"
-
-        android:elevation="10dp"
-        android:fontFamily="@font/roboto_condensed_regular"
-        android:text="Publish"
-        android:textAllCaps="false"
-        app:cornerRadius="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/filter_button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="624dp"
-        android:layout_marginEnd="280dp"
-        android:layout_weight="1"
-        android:backgroundTint="@color/yellow"
-
-        android:elevation="10dp"
-        android:fontFamily="@font/roboto_condensed_regular"
-        android:text="Save"
-        android:textAllCaps="false"
-        app:cornerRadius="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

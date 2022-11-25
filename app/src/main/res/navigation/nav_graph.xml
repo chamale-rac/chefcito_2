@@ -140,15 +140,6 @@
         android:name="com.chama.chefcito_2.InsideRecipeFragment"
         android:label="InsideRecipeFragment"
         android:layout="@layout/inside_recipe_fragment">
-        <argument
-            android:name="image"
-            app:argType="string" />
-        <argument
-            android:name="name"
-            app:argType="string" />
-        <argument
-            android:name="from"
-            app:argType="string" />
 
         <argument
             android:name="ShowNavView"
@@ -160,6 +151,9 @@
         <action
             android:id="@+id/action_insideRecipeFragment_to_savedFragment"
             app:destination="@id/savedFragment" />
+        <argument
+            android:name="Recipe"
+            app:argType="com.chama.chefcito_2.model.Recipe" />
     </fragment>
     <fragment
         android:id="@+id/savedFragment"

@@ -40,7 +40,7 @@ class FeedRecipeAdapter(options: FirestoreRecyclerOptions<Recipe>) :
 
 
         holder.itemView.setOnClickListener {
-            val action = FeedFragmentDirections.actionFeedFragmentToInsideRecipeFragment(model.image, model.title, "feed")
+            val action = FeedFragmentDirections.actionFeedFragmentToInsideRecipeFragment(model)
             holder.itemView.findNavController().navigate(action)
         }
         holder.like_button.setOnClickListener {

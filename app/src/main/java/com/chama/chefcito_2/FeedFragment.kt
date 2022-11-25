@@ -12,7 +12,9 @@ import com.chama.chefcito_2.databinding.FeedFragmentBinding
 import com.chama.chefcito_2.model.FoodRecipe
 import com.chama.chefcito_2.model.Recipe
 import com.chama.chefcito_2.repository.Repository
+
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -55,8 +57,6 @@ class FeedFragment : Fragment() {
         recipeAdapter = FeedRecipeAdapter(options)
         recyclerView  = binding.recyclerViewPosts
         recyclerView.adapter = recipeAdapter
-
-
     }
 
 
