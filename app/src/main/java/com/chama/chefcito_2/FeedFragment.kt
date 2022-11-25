@@ -1,19 +1,19 @@
 package com.chama.chefcito_2
 
+import android.R
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import com.chama.chefcito_2.databinding.FeedFragmentBinding
 import com.chama.chefcito_2.model.FoodRecipe
 import com.chama.chefcito_2.repository.Repository
 
 class FeedFragment: Fragment() {
-
 
     private var _binding: FeedFragmentBinding? = null
 
@@ -42,6 +42,8 @@ class FeedFragment: Fragment() {
         recyclerView = binding.recyclerViewPosts
         recyclerView.adapter = FoodListAdapter(myResults)
 
+
+
     }
 
 
@@ -49,5 +51,6 @@ class FeedFragment: Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 
 }
