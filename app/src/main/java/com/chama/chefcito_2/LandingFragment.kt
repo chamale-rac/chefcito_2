@@ -58,7 +58,6 @@ class LandingFragment : Fragment() {
         }
 
 
-
         buttonLogin.setOnClickListener {
             findNavController().navigate(R.id.action_landing_fragment_to_login_fragment)
         }

@@ -17,20 +17,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 
-class profile_fragment : Fragment() {
+class ProfileFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var profileAdapter: ProfileAdapter
-    private var db = FirebaseFirestore.getInstance()
     private lateinit var firebaseAuth: FirebaseAuth
+    private var db = FirebaseFirestore.getInstance()
     private var _binding: ProfileFragmentBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,28 +50,23 @@ class profile_fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = view.findViewById(R.id.profileRecipesGrid)
-        recyclerView.layoutManager = GridLayoutManager(view.context,3)
+        recyclerView.layoutManager = GridLayoutManager(view.context, 3)
         recyclerView.adapter = ProfileAdapter()
-
-
 
 
         val buttonBack = binding.backButtonProfile
 
-        buttonBack?.setOnClickListener{
+        buttonBack?.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_feedFragment)
         }
 
         val buttonProfileSetting = view.findViewById<ImageButton>(R.id.settingsButtonProfile)
-        buttonProfileSetting?.setOnClickListener{
+        buttonProfileSetting?.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_profileSettingFragment)
         }
 
 
-
-
     }
-
 
 
 }

@@ -94,7 +94,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.chama.chefcito_2.profile_fragment"
+        android:name="com.chama.chefcito_2.ProfileFragment"
         android:label="profile_fragment"
         android:layout="@layout/profile_fragment"
         >

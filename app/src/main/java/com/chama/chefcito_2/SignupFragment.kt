@@ -47,7 +47,7 @@ class SignupFragment : Fragment() {
 
             if (email.isNotBlank() && password.isNotBlank() && password.equals(confirmPass)) {
                 db.collection("users").document(email).set(
-                    hashMapOf("username" to username, "recipes" to arrayListOf(null), "saved_recipes" to arrayListOf(null))
+                    hashMapOf("username" to username, "recipes" to arrayListOf("A"), "saved_recipes" to arrayListOf("Z"))
                 )
                 firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                     if (it.isSuccessful) {
