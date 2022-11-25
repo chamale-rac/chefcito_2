@@ -17,6 +17,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.chama.chefcito_2.databinding.CreateRecipeFragmentBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -33,6 +35,8 @@ class CreateRecipeFragment : Fragment() {
     private val binding get() = _binding!!
     val db = Firebase.firestore
 
+    private lateinit var firebaseAuth: FirebaseAuth
+
 
     lateinit var stepsArr: ArrayList<String>
     lateinit var ingredientsArr: ArrayList<String>
@@ -41,6 +45,7 @@ class CreateRecipeFragment : Fragment() {
         super.onCreate(savedInstanceState)
         stepsArr = ArrayList()
         ingredientsArr = arrayListOf()
+
         //val storageRef = storage.reference
 
     }
@@ -57,6 +62,7 @@ class CreateRecipeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        firebaseAuth = FirebaseAuth.getInstance()
 
         listManager(binding.stepsListView, binding.stepsAddButton, binding.stepsEditText, stepsArr, "Step")
         listManager(binding.ingredientsListView, binding.ingredientsAddButton, binding.ingredientsEditText, ingredientsArr, "Ingredient")
@@ -71,9 +77,12 @@ class CreateRecipeFragment : Fragment() {
             imagePickerActivityResult.launch(galleryIntent)
         }
 
+        var userID = db.collection("users").document(firebaseAuth.currentUser?.email.toString())
+        var documentId = ""
+
         binding.Publish.setOnClickListener {
             val fireRecipe = hashMapOf(
-                "author" to "Pedrito",
+                "author" to userID,
                 "image" to imageURL,
                 "ingredients" to ingredientsArr,
                 "liked" to 0,
@@ -82,15 +91,20 @@ class CreateRecipeFragment : Fragment() {
                 "title" to binding.titleText.text.toString()
             )
 
+
             db.collection("recipes")
                 .add(fireRecipe)
                 .addOnSuccessListener { documentReference ->
+                    documentId = documentReference.id
                     Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
                 }
                 .addOnFailureListener { e ->
                     Log.w(TAG, "Error adding document", e)
                 }
         }
+
+        userID.update("recipes", FieldValue.arrayUnion(documentId))
+
     }
 
     private fun listManager(myListView: ListView,
